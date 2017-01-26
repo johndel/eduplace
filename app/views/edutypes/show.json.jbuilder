@@ -1,0 +1,1 @@
+json.partial! "edutypes/edutype", edutype: @edutype

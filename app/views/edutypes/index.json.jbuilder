@@ -1,0 +1,1 @@
+json.array! @edutypes, partial: 'edutypes/edutype', as: :edutype

@@ -1,0 +1,2 @@
+json.extract! place, :id, :name, :title, :site, :address, :postal_code, :phone, :fax, :permission_code, :edutype, :amea, :trainee_capacity, :city, :county, :created_at, :updated_at
+json.url place_url(place, format: :json)
