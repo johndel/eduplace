@@ -1,4 +1,4 @@
-<%= form_for(edutype) do |f| %>
+<%= form_for(edutype, html: { class: "form-inline" }) do |f| %>
   <% if edutype.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(edutype.errors.count, "error") %> prohibited this edutype from being saved:</h2>
@@ -13,10 +13,11 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%= f.text_field :name, class: "form-control" %>
   </div>
 
+  <br>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,5 +1,6 @@
 class EdutypesController < ApplicationController
   before_action :set_edutype, only: [:show, :edit, :update, :destroy]
+  layout 'generic'
 
   # GET /edutypes
   # GET /edutypes.json

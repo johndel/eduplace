@@ -1,5 +1,6 @@
 class CountiesController < ApplicationController
   before_action :set_county, only: [:show, :edit, :update, :destroy]
+  layout 'generic'
 
   # GET /counties
   # GET /counties.json

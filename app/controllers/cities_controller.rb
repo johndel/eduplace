@@ -1,5 +1,6 @@
 class CitiesController < ApplicationController
   before_action :set_city, only: [:show, :edit, :update, :destroy]
+  layout 'generic'
 
   # GET /cities
   # GET /cities.json
