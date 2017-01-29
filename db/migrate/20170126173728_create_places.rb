@@ -8,7 +8,7 @@ class CreatePlaces < ActiveRecord::Migration[5.0]
       t.integer :postal_code
       t.string :phone
       t.string :fax
-      t.integer :permission_code
+      t.string :permission_code
       t.integer :edutype_id, index: true, foreign_key: true
       t.boolean :amea
       t.integer :trainee_capacity

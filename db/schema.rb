@@ -41,7 +41,7 @@ ActiveRecord::Schema.define(version: 20170126174146) do
     t.integer  "postal_code"
     t.string   "phone"
     t.string   "fax"
-    t.integer  "permission_code"
+    t.string   "permission_code"
     t.integer  "edutype_id"
     t.boolean  "amea"
     t.integer  "trainee_capacity"
