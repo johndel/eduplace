@@ -1,6 +1,5 @@
-User.create!([
-  {email: "istoselidas@gmail.com", encrypted_password: "$2a$11$oOovf4CPxQ1p.OCAd4Thp.7fXwbyKy/uZkW1Lkww/FL1v22rk2gLK", reset_password_token: nil, reset_password_sent_at: nil, remember_created_at: nil, sign_in_count: 1, current_sign_in_at: "2017-01-29 12:27:06", last_sign_in_at: "2017-01-29 12:27:06", current_sign_in_ip: "::1", last_sign_in_ip: "::1"}
-])
+user = User.create(email: 'istoselidas@gmail.com', password: 'qfXdwrdj2T')
+
 City.create!([
   {name: "ΑΓΡΙΝΙΟ"},
   {name: "ΜΕΣΟΛΟΓΓΙ"},
