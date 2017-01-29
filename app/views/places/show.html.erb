@@ -42,7 +42,7 @@
 
 <p>
   <strong>Edutype:</strong>
-  <%= @place.edutype %>
+  <%= @place.edutype.name %>
 </p>
 
 <p>
@@ -57,12 +57,12 @@
 
 <p>
   <strong>City:</strong>
-  <%= @place.city %>
+  <%= @place.city.name %>
 </p>
 
 <p>
   <strong>County:</strong>
-  <%= @place.county %>
+  <%= @place.county.name %>
 </p>
 
 <%= link_to 'Edit', edit_place_path(@place) %> |

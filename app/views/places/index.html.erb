@@ -2,21 +2,67 @@
 
 <h1>Places</h1>
 
+<hr>
+<%= search_form_for @q do |f| %>
+
+  <%= f.label :name_cont %>
+  <%= f.search_field :name_cont, class: "form-control" %>
+
+  <%= f.label :title_cont %>
+  <%= f.search_field :title_cont, class: "form-control" %>
+
+  <%= f.label :site_cont %>
+  <%= f.search_field :site_cont, class: "form-control" %>
+
+  <%= f.label :postal_code_cont %>
+  <%= f.search_field :postal_code_cont, class: "form-control" %>
+
+  <%= f.label :phone_cont %>
+  <%= f.search_field :phone_cont, class: "form-control" %>
+
+  <%= f.label :fax_cont %>
+  <%= f.search_field :fax_cont, class: "form-control" %>
+
+  <%= f.label :permission_code_cont %>
+  <%= f.search_field :permission_code_cont, class: "form-control" %>
+
+  <%#= f.label :amea_cont %>
+  <%#= f.search_field :amea_cont, class: "form-control" %>
+
+  <%= f.label :trainee_capacity_gteq %>
+  <%= f.search_field :trainee_capacity_gteq, class: "form-control" %>
+
+  <%= f.label :trainee_capacity_lteq %>
+  <%= f.search_field :trainee_capacity_lteq, class: "form-control" %>
+
+  <%= f.label :county_id_eq %>
+  <%= f.select :county_id_eq, options_from_collection_for_select(County.order(:name), "id", "name", @q.county_id_eq), include_blank: true %>
+
+  <%= f.label :edutype_id_eq %>
+  <%= f.select :edutype_id_eq, options_from_collection_for_select(Edutype.order(:name), "id", "name", @q.edutype_id_eq), include_blank: true %>
+
+  <%= f.label :city_id_eq %>
+  <%= f.select :city_id_eq, options_from_collection_for_select(City.order(:name), "id", "name", @q.city_id_eq), include_blank: true %>
+
+  <%= f.submit %>
+<% end %>
+<hr>
+
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
-      <th>Name</th>
-      <th>Title</th>
-      <th>Site</th>
-      <th>Address</th>
-      <th>Postal code</th>
-      <th>Phone</th>
-      <th>Fax</th>
-      <th>Permission code</th>
-      <th>Edutype</th>
-      <th>Amea</th>
-      <th>Trainee capacity</th>
+      <th><%= sort_link(@q, :name) %></th>
+      <th><%= sort_link(@q, :title) %></th>
+      <th><%= sort_link(@q, :site) %></th>
+      <th><%= sort_link(@q, :address) %></th>
+      <th><%= sort_link(@q, :postal_code) %></th>
+      <th><%= sort_link(@q, :phone) %></th>
+      <th><%= sort_link(@q, :fax) %></th>
+      <th><%= sort_link(@q, :permission_code) %></th>
+      <th><%= sort_link(@q, :amea) %></th>
+      <th><%= sort_link(@q, :trainee_capacity) %></th>
       <th>City</th>
+      <th>Edutype</th>
       <th>County</th>
       <th colspan="3"></th>
     </tr>
@@ -33,11 +79,11 @@
         <td><%= place.phone %></td>
         <td><%= place.fax %></td>
         <td><%= place.permission_code %></td>
-        <td><%= place.edutype %></td>
         <td><%= place.amea %></td>
         <td><%= place.trainee_capacity %></td>
-        <td><%= place.city %></td>
-        <td><%= place.county %></td>
+        <td><%= place.city.name %></td>
+        <td><%= place.edutype.name %></td>
+        <td><%= place.county.name %></td>
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -45,3 +91,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= paginate @places %>

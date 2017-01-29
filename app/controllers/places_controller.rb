@@ -5,7 +5,10 @@ class PlacesController < ApplicationController
   # GET /places
   # GET /places.json
   def index
-    @places = Place.all
+    params[:per_page] ||= 100
+    @q = Place.includes(:city, :county, :edutype).page(params[:page]).per(params[:per_page]).ransack(params[:q])
+    @places = @q.result(distinct: true)
+
   end
 
   # GET /places/1

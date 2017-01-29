@@ -37,7 +37,7 @@ namespace :parse do
 
         place_name = front.children[3].children[1].children[2].text.strip rescue nil
         place_title = front.children[3].children[1].children[6].text.strip rescue nil
-        place_site = front.children[3].children[1].children[6].text.strip rescue nil
+        place_site = front.children[3].children[1].children[10].text.strip rescue nil
         place_phone = phone_fax[0].gsub("Τηλ : ", "").strip rescue nil
         place_fax = phone_fax[1].gsub("FAX : ", "").strip rescue nil
         place_amea = amea
