@@ -44,7 +44,7 @@ namespace :parse do
         place_trainee_capacity = front.children[3].children[3].children[5].children[3].children[1].text.to_i rescue 0
 
         place_permission_code = front.children[1].children.children.children.text.strip
-        if Place.where(permission_code: place_permission_code).first.nil?
+        # if Place.where(permission_code: place_permission_code).first.nil?
           Place.create(permission_code: place_permission_code,
                   edutype_id: place_edutype.id,
                   county_id: place_county.id,
@@ -58,7 +58,7 @@ namespace :parse do
                   fax: place_fax,
                   amea: place_amea,
                   trainee_capacity: place_trainee_capacity)
-        end
+        # end
       end
     end
   end

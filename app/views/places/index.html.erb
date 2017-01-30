@@ -47,7 +47,10 @@
   <%= f.submit %>
 <% end %>
 <hr>
-
+<div>
+  Αριθμός αποτελέσματων:
+  <%= @results.count %>
+</div>
 <table class="table table-striped table-bordered">
   <thead>
     <tr>
@@ -81,9 +84,9 @@
         <td><%= place.permission_code %></td>
         <td><%= place.amea %></td>
         <td><%= place.trainee_capacity %></td>
-        <td><%= place.city.name %></td>
-        <td><%= place.edutype.name %></td>
-        <td><%= place.county.name %></td>
+        <td><%= place.city.try(:name) %></td>
+        <td><%= place.edutype.try(:name) %></td>
+        <td><%= place.county.try(:name) %></td>
         <td><%= link_to 'Show', place %></td>
         <td><%= link_to 'Edit', edit_place_path(place) %></td>
         <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
