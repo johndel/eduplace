@@ -1,24 +1,4 @@
-# README
+# Eduplace index
+An app to display the parsed data of the http://www.eoppep.gr/index.php/el/search-for/learning-institutions/kdvm_search_page
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+The parser is at `lib/tasks/parser.rake` and the seed data are at `db/seeds.rb`
